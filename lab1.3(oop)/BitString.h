@@ -18,13 +18,12 @@ public:
 	void setA(long value) { a = value; }
 	void setB(long value) { b = value; }
 	void init(long a1, long b1);
-	string toString();
+	string toString()const;
 	void read();
-	void display();
+	void display()const;
 
 	friend BitString XoR(BitString obj1, BitString obj2);
-	friend BitString shiftLeft(BitString obj,int f);
-	friend BitString shiftRight(BitString obj,int f);
+
 
 };
 

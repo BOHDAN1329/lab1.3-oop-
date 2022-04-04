@@ -14,10 +14,10 @@ void BitString::init(long a1, long b1)
 	setB(b1);
 }
 
-string BitString::toString()
+string BitString::toString()const
 {
 	stringstream sout;
-	sout << to_string(a) << to_string(b);
+	sout << "First part =  " << a << endl << "Second part =  " << b << endl;
 	return sout.str();
 }
 
@@ -30,12 +30,10 @@ void BitString::read()
 	   init(x, y);
 }
 
-void BitString::display()
+void BitString::display()const
 {
-	cout << endl;
-	cout << "First part =  " << getA() << endl;
-	cout << "Second part =  " << getB() << endl;
-	cout << endl;
+
+	cout << toString();
 }
 
 BitString XoR(BitString obj1, BitString obj2)
@@ -47,22 +45,5 @@ BitString XoR(BitString obj1, BitString obj2)
 
 }
 
-BitString shiftLeft(BitString obj,int f)
-{
-	BitString res;
-	res.a = obj.a << f;
-	res.b = obj.b << f;
 
-	return res;
-	
-}
-
-BitString shiftRight(BitString obj, int f)
-{
-	BitString res;
-	res.a = obj.a >> f;
-	res.b = obj.b >> f;
-
-	return res;
-}
 
